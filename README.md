@@ -1,5 +1,3 @@
-# README.md
-
 # Nemu-x-WL-singbox
 
 Auto-updating **whitelist rule-set for sing-box**.
@@ -154,3 +152,13 @@ privWL-singbox
 # License
 
 MIT
+
+---
+
+# Disclaimer
+
+This repository only provides routing rules and a domain list.
+
+It does **not** provide proxy servers or bypass censorship on its own.
+
+---
