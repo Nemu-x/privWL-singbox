@@ -45,7 +45,9 @@ Most sing-box clients support **Import from URL**.
 
 Scan this QR code inside your sing-box client.
 
-![QR](qr.png)
+<p align="center">
+<img src="qr.png" width="220">
+</p>
 
 ---
 
