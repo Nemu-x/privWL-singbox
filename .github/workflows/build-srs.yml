@@ -56,22 +56,22 @@ jobs:
 
       - name: Convert Clash YAML -> sing-box source rule-set
         run: |
-          python scripts/clash2srs.py clV2_provider.yaml privwl.json
-          echo "----- privwl.json preview -----"
-          sed -n '1,80p' privwl.json
-          echo "-------------------------------"
+          python scripts/clash2srs.py clV2_provider.yaml nemu-x-wl.json
+          echo "----- nemu-x-wl.json preview -----"
+          sed -n '1,80p' nemu-x-wl.json
+          echo "----------------------------------"
 
       - name: Compile source rule-set -> binary rule-set
         run: |
-          sing-box rule-set compile --output privwl.srs privwl.json
+          sing-box rule-set compile --output nemu-x-wl.srs nemu-x-wl.json
 
       - name: Validate outputs
         run: |
-          ls -lh privwl.json privwl.srs
-          file privwl.json
-          file privwl.srs
-          if file privwl.srs | grep -qi "text"; then
-            echo "ERROR: privwl.srs is TEXT, expected BINARY"
+          ls -lh nemu-x-wl.json nemu-x-wl.srs
+          file nemu-x-wl.json
+          file nemu-x-wl.srs
+          if file nemu-x-wl.srs | grep -qi "text"; then
+            echo "ERROR: nemu-x-wl.srs is TEXT, expected BINARY"
             exit 1
           fi
 
@@ -80,12 +80,12 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
 
-          git add privwl.json privwl.srs
+          git add nemu-x-wl.json nemu-x-wl.srs
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
 
-          git commit -m "auto: rebuild privwl.srs"
+          git commit -m "auto: rebuild nemu-x-wl.srs"
           git push
