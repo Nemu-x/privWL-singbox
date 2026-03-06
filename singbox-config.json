@@ -5,7 +5,7 @@
         "tag": "nemu-x-wl",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/Nemu-x/privWL-singbox/main/privwl.srs",
+        "url": "https://raw.githubusercontent.com/Nemu-x/privWL-singbox/main/nemu-x-wl.srs",
         "update_interval": "1d"
       }
     ],
