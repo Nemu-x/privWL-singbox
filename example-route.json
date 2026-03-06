@@ -1,0 +1,20 @@
+{
+  "route": {
+    "rule_set": [
+      {
+        "tag": "nemu-x-wl",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/Nemu-x/privWL-singbox/main/privwl.srs",
+        "update_interval": "1d"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": ["nemu-x-wl"],
+        "outbound": "proxy"
+      }
+    ],
+    "final": "direct"
+  }
+}
