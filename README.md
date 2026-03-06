@@ -154,6 +154,3 @@ privWL-singbox
 # License
 
 MIT
-
-```
-
