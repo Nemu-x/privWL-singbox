@@ -1,47 +1,157 @@
-# privWL-singbox
+# README.md
 
-Auto-updating whitelist rule-set for **sing-box**.
+# Nemu-x-WL-singbox
 
-This repository provides a remote rule-set for running sing-box in **whitelist mode** — only selected domains are routed through the proxy, while everything else goes **DIRECT**.
+Auto-updating **whitelist rule-set for sing-box**.
 
-The domain list is automatically synchronized with the Clash version of this project.
+This project provides a lightweight remote rule-set designed for **whitelist routing**:
+
+• domains in the list → **proxy**  
+• everything else → **direct**
+
+The rule-set is automatically generated from the Clash whitelist and compiled into the optimized **sing-box `.srs` format**.
 
 ---
 
 ![build](https://github.com/Nemu-x/privWL-singbox/actions/workflows/build-srs.yml/badge.svg)
 ![last commit](https://img.shields.io/github/last-commit/Nemu-x/privWL-singbox)
-![repo size](https://img.shields.io/github/repo-size/Nemu-x/privWL-singbox)
-![license](https://img.shields.io/github/license/Nemu-x/privWL-singbox)
+![maintained](https://img.shields.io/badge/maintained-by%20Nemu--x-purple)
 
 ---
 
-## Features
+# Quick Install
 
-- Automatic updates via GitHub Actions
-- Remote binary rule-set for sing-box
-- Whitelist routing based on Clash `DOMAIN-SUFFIX` rules
-- Minimal and transparent setup
-- Human-readable `privwl.json` included
-- Fully open source
+### Import config (recommended)
 
----
+Use this URL inside your sing-box client:
 
-## Source list
 
-The source domain list is maintained in the
-[privWL-clash repository](https://github.com/Nemu-x/privWL-clash).
+
+[https://raw.githubusercontent.com/Nemu-x/privWL-singbox/main/singbox-config.json](https://raw.githubusercontent.com/Nemu-x/privWL-singbox/main/singbox-config.json)
+
+
+
+Most sing-box clients support **Import from URL**.
 
 ---
 
-## How it works
+### Install button
 
-```text
+[![Import Config](https://img.shields.io/badge/Import-sing--box-blue?style=for-the-badge)](https://raw.githubusercontent.com/Nemu-x/privWL-singbox/main/singbox-config.json)
+
+---
+
+### QR Code
+
+Scan this QR code inside your sing-box client.
+
+![QR](qr.png)
+
+---
+
+# Manual setup
+
+If you want to add the rule-set manually, use the following rule-set URL:
+
+
+
+[https://raw.githubusercontent.com/Nemu-x/privWL-singbox/main/nemu-x-wl.srs](https://raw.githubusercontent.com/Nemu-x/privWL-singbox/main/nemu-x-wl.srs)
+
+
+Example configuration:
+
+```json
+{
+  "route": {
+    "rule_set": [
+      {
+        "tag": "nemu-x-wl",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/Nemu-x/privWL-singbox/main/nemu-x-wl.srs",
+        "update_interval": "1d"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": ["nemu-x-wl"],
+        "outbound": "proxy"
+      }
+    ],
+    "final": "direct"
+  }
+}
+````
+
+---
+
+# Features
+
+* Automatic rule updates via GitHub Actions
+* Remote rule-set for sing-box
+* Optimized `domain_suffix` rules
+* Lightweight `.srs` binary format
+* Transparent rule generation
+* Minimal configuration
+* Fully open source
+
+---
+
+# How it works
+
+```
 Clash whitelist (YAML)
         ↓
 GitHub Actions
         ↓
-Convert to sing-box source rule-set
+Convert to sing-box rule-set
         ↓
-Compile to privwl.srs
+Compile to nemu-x-wl.srs
         ↓
 Use as remote rule-set in sing-box
+```
+
+---
+
+# Source list
+
+The domain list is maintained in:
+
+[https://github.com/Nemu-x/privWL-clash](https://github.com/Nemu-x/privWL-clash)
+
+---
+
+# Repository structure
+
+```
+privWL-singbox
+│
+├ nemu-x-wl.srs
+├ nemu-x-wl.json
+├ singbox-config.json
+│
+├ scripts
+│   └ clash2srs.py
+│
+└ .github/workflows
+    └ build-srs.yml
+```
+
+---
+
+# Related projects
+
+| Project      | Description          |
+| ------------ | -------------------- |
+| [privWL-clash](https://github.com/Nemu-x/privWL-clash) | Clash rule provider  |
+| [privWL-happ](https://github.com/Nemu-x/privWL-happ)  | Happ routing profile |
+| [sing-box](https://github.com/sagernet/sing-box)     | Core proxy engine    |
+
+---
+
+# License
+
+MIT
+
+```
+
