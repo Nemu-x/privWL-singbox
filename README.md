@@ -12,8 +12,8 @@ The rule-set is automatically generated from the Clash whitelist and compiled in
 ---
 
 ![build](https://github.com/Nemu-x/privWL-singbox/actions/workflows/build-srs.yml/badge.svg)
-![last commit](https://img.shields.io/github/last-commit/Nemu-x/privWL-singbox)
 ![maintained](https://img.shields.io/badge/maintained-by%20Nemu--x-purple)
+![last commit](https://img.shields.io/github/last-commit/Nemu-x/privWL-singbox)
 
 ---
 
