@@ -3,6 +3,7 @@
   "rules": [
     {
       "domain_suffix": [
+        "101soundboards.com",
         "10minutemail.com",
         "1337x.to",
         "2407.pl",
@@ -376,6 +377,7 @@
         "istories.media",
         "it-manifest.com",
         "jabra.com",
+        "jammable.com",
         "jetbrains.ai",
         "jetbrains.com",
         "jobs.cy",
@@ -391,6 +393,7 @@
         "keepsolid.com",
         "kemono.party",
         "kemono.su",
+        "kickstarter.com",
         "kino.pub",
         "kinobase.org",
         "kinogo.ec",
